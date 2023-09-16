@@ -25,8 +25,15 @@
 
         }
 
+        .text-box {
+            border: 2px solid black; /* Add a 2px solid black border around the element */
+            padding: 10px; /* Add padding inside the box to separate text from the border */
+            width: 500px; /* Set a fixed width for the box */
+            background-color: white;
+        }
+
         body {
-            background-color: rgb(222, 255, 252); /* Set the background color to light gray */
+            background-color: rgb(192, 214, 248); /* Set the background color to light gray */
         }
 
         table {
@@ -38,9 +45,15 @@
             padding: 10px; /* Adjust the padding inside each cell */
             border: 1px solid #000; /* Add borders to the cells (optional) */
         }
+
         h1 {
             text-align: center; /* Center-align the text */
         }
+
+        h4 {
+            text-align: center; /* Center-align the text */
+        }
+
         /* Style the main content section */
         main {
             text-align: left;
@@ -56,40 +69,42 @@
 </head>
 <body>
     <header>
-        <h1>Copy and Paste Code for Math 116</h1>
+        <h1>Copy and Paste Code<br>Math 116</h1>
     </header>
 
     <main>
         <section>
-            <h1>Numbers explained by Words ( Numerical ~ Cat )</h1>
+            <h1>Numbers explained by Words <br>( Numerical ~ Catagorical )<br></h1>
+            <h4><span style="color: red;">Red Words</span> you NEED to fill, <span style="color: green;">Green Words</span> are for Aesthetics</h4>
                 <hr>
                 <h2>BoxPlot</h2>
-                <p>```{r include=TRUE,echo=FALSE}<br>
-                        ggplot(data = ___, aes(x = ___, y = ___) ) +<br>
-                        geom_boxplot  ( notch=TRUE , outlier.colour = "red" , outlier.size = 2 , fill = "darkgray" ) +<br>
+                
+                <p><div class="text-box">```{r include=TRUE,echo=FALSE}<br>
+                        ggplot(data = <span style="color: red;">YOUR DATA</span>, aes(x = <span style="color: red;">CAT DATA</span>, y = <span style="color: red;">NUM DATA</span>) ) +<br>
+                        geom_boxplot  ( notch=<span style="color: limegreen;">TRUE</span> , outlier.colour = "red" , outlier.size = 2 , fill = "<span style="color: limegreen;">darkgray</span>" ) +<br>
                         stat_boxplot  ( geom = 'errorbar' ) +<br>
-                        labs          ( x = "___" , y = "___" , title = "___" ) +<br>
+                        labs          ( x = "<span style="color: red;">X LABEL</span>" , y = "<span style="color: red;">Y LABEL</span>" , title = "<span style="color: red;">TITLE</span>" ) +<br>
                         theme         ( plot.title = element_text (hjust = 0.5, size = 16) )<br>
-                        ```</p>
+                        ```</div></p>
                 </p><ul>
                         <li>Put this in "Graphical Results"</li>
         
                         </ul><br></p>
 
                 <h2>Fav Stats</h2>
-                <p>```{r include=TRUE,echo=FALSE}<br>
-                    favstats( ___ ~ ___ , data= ___ )<br>
+                <p><div class="text-box">```{r include=TRUE,echo=FALSE}<br>
+                    favstats( <span style="color: red;">NUM DATA</span> ~ <span style="color: red;">CAT DATA</span> , data= <span style="color: red;">YOUR DATA</span> )<br>
                     ```
-                </p><ul>
+                </div></p><ul>
                 <li>Put this in "Numerical Results"</li>
 
                 </ul></p>
 
                 <h2>T Test</h2>
-                <p>```{r include=TRUE,echo=FALSE}<br>
-                    t.test( ___ ~ ___ , data = ___ )<br>
+                <p><div class="text-box">```{r include=TRUE,echo=FALSE}<br>
+                    t.test( <span style="color: red;">NUM DATA</span> ~ <span style="color: red;">CAT DATA</span> , data = <span style="color: red;">YOUR DATA</span> )<br>
                     ```
-                </p>
+                </div></p>
                 <p><ul>
                     <li>Put this in "Inferential"</li>
                     <li>This is used for compating TWO catagories ONLY.</li>
@@ -97,44 +112,46 @@
                 </ul><br></p>
 
                 <h2>One Way Anova</h2>
-                <p>```{r include=TRUE,echo=FALSE}<br>
-                    model1 <- aov( ___ ~ ___ , data = ___ )<br>
+                <p><div class="text-box">```{r include=TRUE,echo=FALSE}<br>
+                    model1 <- aov( <span style="color: red;">NUM DATA</span> ~ <span style="color: red;">CAT DATA</span> , data = <span style="color: red;">YOUR DATA</span> )<br>
                     summary.aov(model1)<br>
                     ```
-                <p><ul>
+                </div>
+                <ul>
                 <li>Put this in "Inferential"</li>
-                <li>This is used for compating multiple catagories.</li>
+                <li>This is used for comparing multiple catagories.</li>
                 <li>This does NOT tell you where the difference is, only that there is a difference somewhere</li>
                 </ul><br></p>
 
                 </ul></p></p>
                 <h2>Tukey HSD</h2>
-                <p>```{r include=TRUE,echo=FALSE}<br>
-                    par(mar = c(3, 8.7, 2, 2))<br>
+                <p><div class="text-box">```{r include=TRUE,echo=FALSE}<br>
+                    par(mar = c(3, <span style="color: limegreen;">8.7</span>, 2, 2))<br>
                     plot(TukeyHSD(model1),las=2)<br>
                     ```
-                </p>
+                </div></p>
                 <p><ul>
                     <li>Put this in "Inferential" under the One Way Anova</li>
-                    <li>This is used for compating multiple catagories.</li>
+                    <li>This is used for comparing multiple catagories.</li>
                     <li>This tells you where the difference is.</li>
+                    <li>If you need to change the width to fit everything, see the </li>
                 </ul><br></p>
         </section>
         <section>
                 <h2>>>> Numbers Explained By Numbers</h2>
                 <hr>
-                <p>Coming Soon!</p>
+                <p>Coming Soon</p>
         </section>
                 <h2>>>> Words Explained By Words</h2>
                 <hr>
-                <p>Coming Soon!</p>
+                <p>Coming Soon</p>
         <section>
             
         </section>
     </main>
 
     <footer>
-        <p></p>
+        <p>Discord : "Math 116 Support"</p>
     </footer>
 </body>
 </html>
