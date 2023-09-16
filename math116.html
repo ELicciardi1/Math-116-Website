@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Page Title Here</title>
+    <meta name="description" content="Your page description here">
+    <link rel="stylesheet" href="styles.css"> <!-- Add your CSS file here -->
+    <style>
+        /* Center the main content and footer */
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        /* Style the header */
+
+        header {
+
+        /* You can add styles to the header if needed */
+
+        }
+
+        body {
+            background-color: rgb(255, 255, 195); /* Set the background color to light gray */
+        }
+
+        table {
+            border-collapse: separate; /* Use separate borders for cells */
+            border-spacing: 10px; /* Adjust the spacing between cells */
+        }
+
+        td {
+            padding: 10px; /* Adjust the padding inside each cell */
+            border: 1px solid #000; /* Add borders to the cells (optional) */
+        }
+        h1 {
+            text-align: center; /* Center-align the text */
+        }
+        /* Style the main content section */
+        main {
+            text-align: left;
+            padding: 20px;
+        }
+
+        /* Style the footer */
+        footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Copy and Paste Code for Math 116</h1>
+    </header>
+
+    <main>
+        <section>
+            <h1>Numbers explained by Words ( Numerical ~ Cat )</h1>
+                <hr>
+                <h2>BoxPlot</h2>
+                <p>```{r include=TRUE,echo=FALSE}<br>
+                        ggplot(data = ___, aes(x = ___, y = ___) ) +<br>
+                        geom_boxplot  ( notch=TRUE , outlier.colour = "red" , outlier.size = 2 , fill = "darkgray" ) +<br>
+                        stat_boxplot  ( geom = 'errorbar' ) +<br>
+                        labs          ( x = "___" , y = "___" , title = "___" ) +<br>
+                        theme         ( plot.title = element_text (hjust = 0.5, size = 16) )<br>
+                        ```</p>
+                </p><ul>
+                        <li>Put this in "Graphical Results"</li>
+        
+                        </ul><br></p>
+
+                <h2>Fav Stats</h2>
+                <p>```{r include=TRUE,echo=FALSE}<br>
+                    favstats( ___ ~ ___ , data= ___ )<br>
+                    ```
+                </p><ul>
+                <li>Put this in "Numerical Results"</li>
+
+                </ul></p>
+
+                <h2>T Test</h2>
+                <p>```{r include=TRUE,echo=FALSE}<br>
+                    t.test( ___ ~ ___ , data = ___ )<br>
+                    ```
+                </p>
+                <p><ul>
+                    <li>Put this in "Inferential"</li>
+                    <li>This is used for compating TWO catagories ONLY.</li>
+
+                </ul><br></p>
+
+                <h2>One Way Anova</h2>
+                <p>```{r include=TRUE,echo=FALSE}<br>
+                    model1 <- aov( ___ ~ ___ , data = ___ )<br>
+                    summary.aov(model1)<br>
+                    ```
+                <p><ul>
+                <li>Put this in "Inferential"</li>
+                <li>This is used for compating multiple catagories.</li>
+                <li>This does NOT tell you where the difference is, only that there is a difference somewhere</li>
+                </ul><br></p>
+
+                </ul></p></p>
+                <h2>Tukey HSD</h2>
+                <p>```{r include=TRUE,echo=FALSE}<br>
+                    par(mar = c(3, 8.7, 2, 2))<br>
+                    plot(TukeyHSD(model1),las=2)<br>
+                    ```
+                </p>
+                <p><ul>
+                    <li>Put this in "Inferential" under the One Way Anova</li>
+                    <li>This is used for compating multiple catagories.</li>
+                    <li>This tells you where the difference is.</li>
+                </ul><br></p>
+        </section>
+        <section>
+                <h2>>>> Numbers Explained By Numbers</h2>
+                <hr>
+                <p>Coming Soon!</p>
+        </section>
+                <h2>>>> Words Explained By Words</h2>
+                <hr>
+                <p>Coming Soon!</p>
+        <section>
+            
+        </section>
+    </main>
+
+    <footer>
+        <p></p>
+    </footer>
+</body>
+</html>
