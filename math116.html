@@ -37,7 +37,7 @@
         }
 
         body {
-            background-color: rgb(192, 214, 248); /* Set the background color to light gray */
+            background-color: rgb(222, 232, 247); /* Set the background color to light gray */
         }
 
         table {
@@ -83,31 +83,31 @@
                 <hr>
                 <h2>BoxPlot</h2>
                 
-                <p><div class="text-box">```{r include=TRUE,echo=FALSE}<br>
+                <p><div class="text-box"><code>```</code>{r include=TRUE,echo=FALSE}<br>
                         ggplot(data = <span style="color: red;">YOUR DATA</span>, aes(x = <span style="color: red;">CAT DATA</span>, y = <span style="color: red;">NUM DATA</span>) ) +<br>
                         geom_boxplot  ( notch=<span style="color: limegreen;">TRUE</span> , outlier.colour = "red" , outlier.size = 2 , fill = "<span style="color: limegreen;">darkgray</span>" ) +<br>
                         stat_boxplot  ( geom = 'errorbar' ) +<br>
                         labs          ( x = "<span style="color: red;">X LABEL</span>" , y = "<span style="color: red;">Y LABEL</span>" , title = "<span style="color: red;">TITLE</span>" ) +<br>
                         theme         ( plot.title = element_text (hjust = 0.5, size = 16) )<br>
-                        ```</div></p>
+                        <code>```</code></div></p>
                 </p><ul>
                         <li>Put this in "Graphical Results"</li>
         
                         </ul><br></p>
 
                 <h2>Fav Stats</h2>
-                <p><div class="text-box">```{r include=TRUE,echo=FALSE}<br>
+                <p><div class="text-box"><code>```</code>{r include=TRUE,echo=FALSE}<br>
                     favstats( <span style="color: red;">NUM DATA</span> ~ <span style="color: red;">CAT DATA</span> , data= <span style="color: red;">YOUR DATA</span> )<br>
-                    ```
+                    <code>```</code>
                 </div></p><ul>
                 <li>Put this in "Numerical Results"</li>
 
                 </ul></p>
 
                 <h2>T Test</h2>
-                <p><div class="text-box">```{r include=TRUE,echo=FALSE}<br>
+                <p><div class="text-box"><code>```</code>{r include=TRUE,echo=FALSE}<br>
                     t.test( <span style="color: red;">NUM DATA</span> ~ <span style="color: red;">CAT DATA</span> , data = <span style="color: red;">YOUR DATA</span> )<br>
-                    ```
+                    <code>```</code>
                 </div></p>
                 <p><ul>
                     <li>Put this in "Inferential"</li>
@@ -116,10 +116,10 @@
                 </ul><br></p>
 
                 <h2>One Way Anova</h2>
-                <p><div class="text-box">```{r include=TRUE,echo=FALSE}<br>
+                <p><div class="text-box"><code>```</code>{r include=TRUE,echo=FALSE}<br>
                     model1 <- aov( <span style="color: red;">NUM DATA</span> ~ <span style="color: red;">CAT DATA</span> , data = <span style="color: red;">YOUR DATA</span> )<br>
                     summary.aov(model1)<br>
-                    ```
+                    <code>```</code>
                 </div>
                 <ul>
                 <li>Put this in "Inferential"</li>
@@ -129,31 +129,27 @@
 
                 </ul></p></p>
                 <h2>Tukey HSD</h2>
-                <p><div class="text-box">```{r include=TRUE,echo=FALSE}<br>
+                <p><div class="text-box"><code>```</code>{r include=TRUE,echo=FALSE}<br>
                     par(mar = c(3, <span style="color: limegreen;">8.7</span>, 2, 2))<br>
                     plot(TukeyHSD(model1),las=2)<br>
-                    ```
+                    <code>```</code>
                 </div></p>
                 <p><ul>
                     <li>Put this in "Inferential" under the One Way Anova</li>
                     <li>This is used for comparing multiple catagories.</li>
                     <li>This tells you where the difference is.</li>
                     <li>If you need to change the width to fit everything, see the <span style="color: green;">Green Words</span></li>
-                </ul><br></p>
+                </ul><br><br><br></p>
         </section>
         <section>
                 <h1>Numbers Explained By Numbers<br>Numerical ~ Numerical</h1>
                 <hr>
                 <p>Coming Soon</p>
-                <p>Quantum Field Theory</p>
-                <p>\(\Psi(x) = \sum_{n=0}^{\infty} \frac{1}{n!}\left(\frac{-i\hat{H}(t)}{\hbar}\right)^n \Psi(x,t_0)\)</p>
         </section>
         <section>
                 <h1>Words Explained By Words<br>Catagorical ~ Catagorical</h1>
                 <hr>
                 <p>Coming Soon</p>
-                <p>Gaussian Integrals</p>
-            <p>\(\displaystyle\int_{-\infty}^{\infty} e^{-x^2} dx = \sqrt{\pi} \sum_{n=0}^{\infty} \frac{(-1)^n}{2^n n!} \iiint_V \nabla^2 f \, dV\)</p>
         </section>
     </main>
 
