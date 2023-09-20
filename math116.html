@@ -32,7 +32,7 @@
         .text-box {
             border: 2px solid black; /* Add a 2px solid black border around the element */
             padding: 10px; /* Add padding inside the box to separate text from the border */
-            width: 500px; /* Set a fixed width for the box */
+            width: 600px; /* Set a fixed width for the box */
             background-color: white;
         }
 
@@ -81,6 +81,14 @@
             <h1>Numbers explained by Words <br>( Numerical ~ Catagorical )<br></h1>
             <h4><span style="color: red;">Red Words</span> you NEED to fill, <span style="color: green;">Green Words</span> are for Aesthetics</h4>
                 <hr>
+                <h2>Initializing your Data</h2>
+                <body><div class="text-box"><code>```</code>{r include=FALSE,echo=FALSE}<br>mydata <- read.csv(file="YOUR FILE")<br><code>```</code></div></body>
+                <h2>Factor Data</h2>
+                <body><div class="text-box"><code>```</code>{r eval=FALSE}<br>
+                                FinalData <- FinalData %>%<br>
+                                mutate(across(where(is.character), as.factor))<br>
+                                <code>```</code></div></body>
+
                 <h2>BoxPlot</h2>
                 
                 <p><div class="text-box"><code>```</code>{r include=TRUE,echo=FALSE}<br>
@@ -103,6 +111,8 @@
                 <li>Put this in "Numerical Results"</li>
 
                 </ul></p>
+
+
 
                 <h2>T Test</h2>
                 <p><div class="text-box"><code>```</code>{r include=TRUE,echo=FALSE}<br>
@@ -131,7 +141,7 @@
                 <h2>Tukey HSD</h2>
                 <p><div class="text-box"><code>```</code>{r include=TRUE,echo=FALSE}<br>
                     par(mar = c(3, <span style="color: limegreen;">8.7</span>, 2, 2))<br>
-                    plot(TukeyHSD(model1),las=2)<br>
+                    plot(TukeyHSD(model1,<span style="color: limegreen;">conf.level = 0.95</span>),las=2)<br>
                     <code>```</code>
                 </div></p>
                 <p><ul>
@@ -142,13 +152,24 @@
                 </ul><br><br><br></p>
         </section>
         <section>
-                <h1>Numbers Explained By Numbers<br>Numerical ~ Numerical</h1>
-                <hr>
-                <p>Coming Soon</p>
+                <h1>Numbers Explained By Numbers<br>Numerical ~ Numerical</h1><hr>
+                <h2>Scatter Plot</h2><br>
+                <body><div class="text-box"><code>```</code>{r include=TRUE,echo=FALSE}<br>
+                    ggplot(data = <span style="color: red;">mydata</span>, aes(x = <span style="color: red;">X DATA</span>, y = <span style="color: red;">Y DATA</span>) ) +<br>
+                    geom_point (shape = 21, fill = "black", size = 1) +<br>
+                    geom_smooth(method = "lm", color = "blue", se = TRUE) +<br>
+                    labs(x = "X LABEL", y = "Y LABEL", title = "TITLE") +<br>
+                    theme(plot.title = element_text(hjust = 0.5))<br>
+                    <code>```</code></div></body>
+                
+                <h2>Correlation</h2>
+                <body><div class="text-box"><code>```</code>{r}<br>
+                    cor(WORDSUM~EDUC,data=mydata)<br>
+                    <code>```</code>```</div></body>
+
         </section>
         <section>
-                <h1>Words Explained By Words<br>Catagorical ~ Catagorical</h1>
-                <hr>
+                <h1>Words Explained By Words<br>Catagorical ~ Catagorical</h1><hr><br>
                 <p>Coming Soon</p>
         </section>
     </main>
