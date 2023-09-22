@@ -3,109 +3,149 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Templet</title>
+    <title>Categorical ~ Categorical</title>
+    <meta name="description" content="Just Copy and Paste">
+    <link rel="stylesheet" href="styles.css"> <!-- Add your CSS file here -->
+
+
+    <style>
+        /* Center the main content and footer */
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        /* Style the header */
+
+        header {
+
+        /* You can add styles to the header if needed */
+
+        }
+
+        .text-box {
+            border: 2px solid black; /* Add a 2px solid black border around the element */
+            padding: 10px; /* Add padding inside the box to separate text from the border */
+            width: 600px; /* Set a fixed width for the box */
+            background-color: white;
+        }
+
+        body {
+            background-color: rgb(222, 232, 247); /* Set the background color to light gray */
+        }
+
+        table {
+            border-collapse: separate; /* Use separate borders for cells */
+            border-spacing: 10px; /* Adjust the spacing between cells */
+        }
+
+        td {
+            padding: 10px; /* Adjust the padding inside each cell */
+            border: 1px solid #000; /* Add borders to the cells (optional) */
+        }
+
+        h1 {
+            text-align: center; /* Center-align the text */
+        }
+
+        h4 {
+            text-align: center; /* Center-align the text */
+        }
+
+        /* Style the main content section */
+        main {
+            text-align: left;
+            padding: 20px;
+        }
+
+        nav {
+            text-align: center;
+        }
+
+        /* Style the footer */
+        footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+
 </head>
 
-<style>
-    /* Center the main content and footer */
-    body {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        min-height: 100vh;
-        margin: 0;
-    }
-
-    /* Style the header */
-
-    header {
-
-    /* You can add styles to the header if needed */
-
-    }
-
-    .text-box {
-        border: 2px solid black; /* Add a 2px solid black border around the element */
-        padding: 10px; /* Add padding inside the box to separate text from the border */
-        width: 600px; /* Set a fixed width for the box */
-        background-color: white;
-    }
-
-    body {
-        background-color: rgb(222, 232, 247); /* Set the background color to light gray */
-    }
-
-    table {
-        border-collapse: separate; /* Use separate borders for cells */
-        border-spacing: 10px; /* Adjust the spacing between cells */
-    }
-
-    td {
-        padding: 10px; /* Adjust the padding inside each cell */
-        border: 1px solid #000; /* Add borders to the cells (optional) */
-    }
-
-    h1 {
-        text-align: center; /* Center-align the text */
-    }
-
-    h4 {
-        text-align: center; /* Center-align the text */
-    }
-
-    /* Style the main content section */
-    main {
-        text-align: left;
-        padding: 20px;
-    }
-
-    /* Style the footer */
-    footer {
-        text-align: center;
-        margin-top: 20px;
-    }
-    nav {
-        font-size: large;
-        text-align: center;
-    }
-</style>
-
-
 <body>
-<header><h1>Math 116 Helper Files<br><hr>Catagorical ~ Catagorical</h1></header>
-<nav>
-    <a href="https://elicciardi1.github.io/Math-116-Website/math116">Home</a> |
-    <a href="https://elicciardi1.github.io/Math-116-Website/numnum">Numerical ~ Numerical</a> |
-    <a href="https://elicciardi1.github.io/Math-116-Website/numcat">Numerical ~ Catagorical</a> |
-    <a href="https://elicciardi1.github.io/Math-116-Website/catcat">Catagorical ~ Catagorical</a>
-</nav>
+    <header>
+        <h1>Categorical ~ Categorical</h1><hr>
+    </header>
+    <h2>
+    <nav>
+        <a href="https://elicciardi1.github.io/Math-116-Website/math116">Home</a>
+    </nav>
+</h2>
+    <main>
+        
+        <section><h2>Graphical Results</h2><div class="text-box"><code>```</code>
+            {r include = TRUE, echo = FALSE}<br>
+            ggplot(___, aes(x = ___, fill = ___)) +
+            geom_bar(position = "dodge") +
+            labs(title = "___",x = "___",y = "___") +
+            theme(legend.title = element_blank(),
+                    plot.title = element_text(hjust = 0.5,size = 18))
+            <br><code>```</code>
+            </div><br>
+            
+            <ul>
+                <li>This makes a bar graph</li>
+            </ul>
+        </section>
+            
+        <section><h2>Numerical Results</h2><div class="text-box"><code>```</code>
+            {r include = TRUE, echo = FALSE}<br>
+            table1 <- xtabs(~___ + ___, data=___)
+            colPerc(table1)
+            <br><code>```</code>
+            </div><br>
+            
+            <ul>
+                <li>This prints the data as a percentage</li>
+                <li>If it doesnt look right try switching "col" to "row"</li>
+            </ul>
+        </section>
 
-<main>
-<h1></h1>
-<hr>
+        <section><h2>Inferential Results (Single)</h2><div class="text-box"><code>```</code>
+            {r include = TRUE, echo = FALSE}<br>
+            chisq.test(table1)<br>
+            chisqtestGC(table1)<br>
+            fisher.test(table1)
+            <br><code>```</code>
+            </div><br>
+            
+            <ul>
+                <li>The Chi Squared is like the Anova, it onyl tells you IF there is a difference</li>
+                <li>The Fisher Test will tell you where it is, look for the low P-Value or high Chi-Statistic</li>
+            </ul>
+        </section>
 
+        <section><h2>Inferential Results (Multiple)</h2><div class="text-box"><code>```</code>
+            {r include = TRUE, echo = FALSE}<br>
+            chisq.test(table1)<br>
+            chisqtestGC(table1)<br>
+            FisherTable(table1,confL = 0.95,printAll = TRUE)
+            <br><code>```</code>
+            </div><br>
+            
+            <ul>
+                <li>The fisher table loops the fisher test for all combinations</li>
+                <li>Look for a low P-Value or High Chi-Statistic</li>
+            </ul>
+        </section>
 
-
-<section><h2>Title</h2><div class="text-box"><code>```</code>
-{r include = TRUE, echo = FALSE}<br>
-
-<br><code>```</code>
-</div><br>
-<ul>
-    <li></li>
-    <li></li>
-    <li></li>
-</ul>
-</section>
-
-</main>
-
-
+        
 
     <footer>
-        <p>Discord : "Math 116 Support"</p>
+        <hr><p>Discord : "Math 116 Support"</p>
     </footer>
-
 </body>
 </html>

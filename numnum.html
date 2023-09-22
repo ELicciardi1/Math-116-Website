@@ -3,109 +3,155 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Templet</title>
+    <title>Numerical ~ Numerical</title>
+    <meta name="description" content="Just Copy and Paste">
+    <link rel="stylesheet" href="styles.css"> <!-- Add your CSS file here -->
+
+
+    <style>
+        /* Center the main content and footer */
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        /* Style the header */
+
+        header {
+
+        /* You can add styles to the header if needed */
+
+        }
+
+        .text-box {
+            border: 2px solid black; /* Add a 2px solid black border around the element */
+            padding: 10px; /* Add padding inside the box to separate text from the border */
+            width: 600px; /* Set a fixed width for the box */
+            background-color: white;
+        }
+
+        body {
+            background-color: rgb(222, 232, 247); /* Set the background color to light gray */
+        }
+
+        table {
+            border-collapse: separate; /* Use separate borders for cells */
+            border-spacing: 10px; /* Adjust the spacing between cells */
+        }
+
+        td {
+            padding: 10px; /* Adjust the padding inside each cell */
+            border: 1px solid #000; /* Add borders to the cells (optional) */
+        }
+
+        h1 {
+            text-align: center; /* Center-align the text */
+        }
+
+        h4 {
+            text-align: center; /* Center-align the text */
+        }
+
+        /* Style the main content section */
+        main {
+            text-align: left;
+            padding: 20px;
+        }
+
+        nav {
+            text-align: center;
+        }
+
+        /* Style the footer */
+        footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 
-<style>
-    /* Center the main content and footer */
-    body {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        min-height: 100vh;
-        margin: 0;
-    }
-
-    /* Style the header */
-
-    header {
-
-    /* You can add styles to the header if needed */
-
-    }
-
-    .text-box {
-        border: 2px solid black; /* Add a 2px solid black border around the element */
-        padding: 10px; /* Add padding inside the box to separate text from the border */
-        width: 600px; /* Set a fixed width for the box */
-        background-color: white;
-    }
-
-    body {
-        background-color: rgb(222, 232, 247); /* Set the background color to light gray */
-    }
-
-    table {
-        border-collapse: separate; /* Use separate borders for cells */
-        border-spacing: 10px; /* Adjust the spacing between cells */
-    }
-
-    td {
-        padding: 10px; /* Adjust the padding inside each cell */
-        border: 1px solid #000; /* Add borders to the cells (optional) */
-    }
-
-    h1 {
-        text-align: center; /* Center-align the text */
-    }
-
-    h4 {
-        text-align: center; /* Center-align the text */
-    }
-
-    /* Style the main content section */
-    main {
-        text-align: left;
-        padding: 20px;
-    }
-
-    /* Style the footer */
-    footer {
-        text-align: center;
-        margin-top: 20px;
-    }
-    nav {
-        font-size: large;
-        text-align: center;
-    }
-</style>
-
-
 <body>
-<header><h1>Math 116 Helper Files<br><hr>Numerical ~ Numerical</h1></header>
-<nav>
-    <a href="https://elicciardi1.github.io/Math-116-Website/math116">Home</a> |
-    <a href="https://elicciardi1.github.io/Math-116-Website/numnum">Numerical ~ Numerical</a> |
-    <a href="https://elicciardi1.github.io/Math-116-Website/numcat">Numerical ~ Catagorical</a> |
-    <a href="https://elicciardi1.github.io/Math-116-Website/catcat">Catagorical ~ Catagorical</a>
-</nav>
+    <header>
+        <h1>Numerical ~ Numerical</h1>
+    </header>
+    <h2>
+    <nav>
+        <a href="https://elicciardi1.github.io/Math-116-Website/math116">Home</a>
+    </nav>
+</h2>
+    <main>
+        
+        <section><h2>Graphical Results</h2><div class="text-box"><code>```</code>
+            {r include = TRUE, echo = FALSE}<br>
+            ggplot(___,aes(y=___,x=___)) + <br>
+            geom_point(aes(col=Sex)) + <br>
+            geom_smooth(method=lm) + <br>
+            labs(title = "___",x = "___",y = "___") + <br>
+            theme(plot.title = element_text(hjust = 0.5, size = 20))
+            <br><code>```</code>
+            </div><br>
+            
+            <ul>
+                <li>This makes a scatterplot</li>
+                <li>The regression line is also inferential data.</li>
+            </ul>
+        </section>
+            
+        <section><h2>Numerical Results</h2><div class="text-box"><code>```</code>
+            {r include = TRUE, echo = FALSE}<br>
+            cor(___~___,data=___)
+            <br><code>```</code>
+            </div><br>
+            
+            <ul>
+                <li>This gives you a number showing if the items are correlated</li>
+                <li>If there is NO difference it will be 0, it will always be between -1 and 1</li>
+            </ul>
+        </section>
 
-<main>
-<h1></h1>
-<hr>
+        <section><h2>Inferential Results (Model)</h2><div class="text-box"><code>```</code>
+            {r include = TRUE, echo = FALSE}<br>
+            model.1 <- lm(___~___,data=___)<br>
+            summary.lm(model.1)
+            <br><code>```</code>
+            </div><br>
+            
+            <ul>
+                <li>This will print a summary with a P-Value</li>
+            </ul>
+        </section>
 
+        <section><h2>Inferential Results (Anova)</h2><div class="text-box"><code>```</code>
+            {r include = TRUE, echo = FALSE}<br>
+            anova(model.1)
+            <br><code>```</code>
+            </div><br>
+            
+            <ul>
+                <li>If there are multiple categories, repeat the above steps to make model.2+</li>
+                <li>The the syntax will be "anova(model.1 , model.1 ... )"</li>
+            </ul>
+        </section>
 
+        <section><h2>3D Plot</h2><div class="text-box"><code>```</code>
+            {r include = TRUE, echo = FALSE}<br>
+            plot3d(___$___,___$___,___$___)
+            <br><code>```</code>
+            </div><br>
+            
+            <ul>
+                <li>If there are three data comparisons you can make a 3d graph</li>
+                <li>You must put "require(rgl)" in the header block</li>
+                <li>If it is not installed enter "install.packages("rgl")" you only need to once</li>
+            </ul>
+        </section>
 
-<section><h2>Title</h2><div class="text-box"><code>```</code>
-{r include = TRUE, echo = FALSE}<br>
-
-<br><code>```</code>
-</div><br>
-<ul>
-    <li></li>
-    <li></li>
-    <li></li>
-</ul>
-</section>
-
-</main>
-
-
-
-<footer>
-    <p>Discord : "Math 116 Support"</p>
-</footer>
-
+    <footer>
+        <hr><p>Discord : "Math 116 Support"</p>
+    </footer>
 </body>
 </html>

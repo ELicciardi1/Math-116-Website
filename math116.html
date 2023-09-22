@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Code For Math 116</title>
+    <title>Home</title>
     <meta name="description" content="Just Copy and Paste">
     <link rel="stylesheet" href="styles.css"> <!-- Add your CSS file here -->
 
@@ -62,6 +62,10 @@
             padding: 20px;
         }
 
+        nav {
+            text-align: center;
+        }
+
         /* Style the footer */
         footer {
             text-align: center;
@@ -69,116 +73,42 @@
         }
     </style>
 </head>
+
 <body>
     <header>
-        <h1>Copy and Paste Code<br>Math 116</h1>
+        <h1>Copy and Paste Code<br>Home</h1>
     </header>
-
+    <h2>
     <nav>
-        <a href="https://elicciardi1.github.io/Math-116-Website/math116">Home</a> |
-        <a href="https://elicciardi1.github.io/Math-116-Website/numnum">Numerical ~ Numerical</a> |
-        <a href="https://elicciardi1.github.io/Math-116-Website/numcat">Numerical ~ Catagorical</a> |
+        <h4>What type of problem?</h4>
+        <a href="https://elicciardi1.github.io/Math-116-Website/numnum">Numerical ~ Numerical</a><br><br>
+        <a href="https://elicciardi1.github.io/Math-116-Website/numcat">Numerical ~ Catagorical</a><br><br>
         <a href="https://elicciardi1.github.io/Math-116-Website/catcat">Catagorical ~ Catagorical</a>
     </nav>
-
+</h2>
     <main>
+        <h2>If your code isnt working, try running all the code blocks from the top down.</h2><hr>
         <section>
-            <h1>Numbers explained by Words <br>( Numerical ~ Catagorical )<br></h1>
-            <h4><span style="color: red;">Red Words</span> you NEED to fill, <span style="color: green;">Green Words</span> are for Aesthetics</h4>
-                <hr>
-                <h2>Initializing your Data</h2>
-                <body><div class="text-box"><code>```</code>{r include=FALSE,echo=FALSE}<br>mydata <- read.csv(file="YOUR FILE")<br><code>```</code></div></body>
-                <h2>Factor Data</h2>
-                <body><div class="text-box"><code>```</code>{r eval=FALSE}<br>
-                                FinalData <- FinalData %>%<br>
-                                mutate(across(where(is.character), as.factor))<br>
-                                <code>```</code></div></body>
-
-                <h2>BoxPlot</h2>
-                
-                <p><div class="text-box"><code>```</code>{r include=TRUE,echo=FALSE}<br>
-                        ggplot(data = <span style="color: red;">YOUR DATA</span>, aes(x = <span style="color: red;">CAT DATA</span>, y = <span style="color: red;">NUM DATA</span>) ) +<br>
-                        geom_boxplot  ( notch=<span style="color: limegreen;">TRUE</span> , outlier.colour = "red" , outlier.size = 2 , fill = "<span style="color: limegreen;">darkgray</span>" ) +<br>
-                        stat_boxplot  ( geom = 'errorbar' ) +<br>
-                        labs          ( x = "<span style="color: red;">X LABEL</span>" , y = "<span style="color: red;">Y LABEL</span>" , title = "<span style="color: red;">TITLE</span>" ) +<br>
-                        theme         ( plot.title = element_text (hjust = 0.5, size = 16) )<br>
-                        <code>```</code></div></p>
-                </p><ul>
-                        <li>Put this in "Graphical Results"</li>
+            <ol>
+                <li>#TODO List DYPLR Functions</li>
+            </ol>
+        </section>
+        <section><h2>Factoring</h2><div class="text-box"><code>```</code>
+            {r include = TRUE, echo = FALSE}<br>
+            ___ <- ___ %>% <br>
+            mutate(across(where(is.character), as.factor))
+            <br><code>```</code>
+            </div><br>
+            
+            <ul>
+                <li>This factors your data</li>
+                <li>In: MyTricks</li>
+            </ul>
+        </section>
+           
         
-                        </ul><br></p>
-
-                <h2>Fav Stats</h2>
-                <p><div class="text-box"><code>```</code>{r include=TRUE,echo=FALSE}<br>
-                    favstats( <span style="color: red;">NUM DATA</span> ~ <span style="color: red;">CAT DATA</span> , data= <span style="color: red;">YOUR DATA</span> )<br>
-                    <code>```</code>
-                </div></p><ul>
-                <li>Put this in "Numerical Results"</li>
-
-                </ul></p>
-
-
-
-                <h2>T Test</h2>
-                <p><div class="text-box"><code>```</code>{r include=TRUE,echo=FALSE}<br>
-                    t.test( <span style="color: red;">NUM DATA</span> ~ <span style="color: red;">CAT DATA</span> , data = <span style="color: red;">YOUR DATA</span> )<br>
-                    <code>```</code>
-                </div></p>
-                <p><ul>
-                    <li>Put this in "Inferential"</li>
-                    <li>This is used for compating TWO catagories ONLY.</li>
-
-                </ul><br></p>
-
-                <h2>One Way Anova</h2>
-                <p><div class="text-box"><code>```</code>{r include=TRUE,echo=FALSE}<br>
-                    model1 <- aov( <span style="color: red;">NUM DATA</span> ~ <span style="color: red;">CAT DATA</span> , data = <span style="color: red;">YOUR DATA</span> )<br>
-                    summary.aov(model1)<br>
-                    <code>```</code>
-                </div>
-                <ul>
-                <li>Put this in "Inferential"</li>
-                <li>This is used for comparing multiple catagories.</li>
-                <li>This does NOT tell you where the difference is, only that there is a difference somewhere</li>
-                </ul><br></p>
-
-                </ul></p></p>
-                <h2>Tukey HSD</h2>
-                <p><div class="text-box"><code>```</code>{r include=TRUE,echo=FALSE}<br>
-                    par(mar = c(3, <span style="color: limegreen;">8.7</span>, 2, 2))<br>
-                    plot(TukeyHSD(model1,<span style="color: limegreen;">conf.level = 0.95</span>),las=2)<br>
-                    <code>```</code>
-                </div></p>
-                <p><ul>
-                    <li>Put this in "Inferential" under the One Way Anova</li>
-                    <li>This is used for comparing multiple catagories.</li>
-                    <li>This tells you where the difference is.</li>
-                    <li>If you need to change the width to fit everything, see the <span style="color: green;">Green Words</span> and make it bigger.</li>
-                </ul><br><br><br></p>
-        </section>
-        <section>
-                <h1>Numbers Explained By Numbers<br>Numerical ~ Numerical</h1><hr>
-                <h2>Scatter Plot</h2><br>
-                <body><div class="text-box"><code>```</code>{r include=TRUE,echo=FALSE}<br>
-                    ggplot(data = <span style="color: red;">mydata</span>, aes(x = <span style="color: red;">X DATA</span>, y = <span style="color: red;">Y DATA</span>) ) +<br>
-                    geom_point (shape = 21, fill = "black", size = 1) +<br>
-                    geom_smooth(method = "lm", color = "blue", se = TRUE) +<br>
-                    labs(x = "X LABEL", y = "Y LABEL", title = "TITLE") +<br>
-                    theme(plot.title = element_text(hjust = 0.5))<br>
-                    <code>```</code></div></body>
-                
-                <h2>Correlation</h2>
-                <body><div class="text-box"><code>```</code>{r}<br>
-                    cor(WORDSUM~EDUC,data=mydata)<br>
-                    <code>```</code>```</div></body>
-
-        </section>
-        <section>
-                <h1>Words Explained By Words<br>Catagorical ~ Catagorical</h1><hr><br>
-                <p>Testing HyperLinks<br><a href="https://elicciardi1.github.io/Math-116-Website/Home">Other Page</a>
-                </p>
-        </section>
-    </main>
+        
+        
 
     <footer>
         <p>Discord : "Math 116 Support"</p>
